@@ -70,7 +70,7 @@ body {
     body .container .columnRight {
       float: left;
       border: 1px solid #DADADA;
-      height: 108vh;
+      height: auto;
       display: inline-block;
       overflow: hidden;
       background: #EDEAE5;
@@ -147,5 +147,24 @@ body {
             margin-left: 10px;
             border: none;
             width: 85%; }
+
+#emoticons {
+  width: 250px;
+  height: 250px;
+  overflow-y: auto;
+  position: relative;
+  top: -280px;
+  background: #F0F0F0;
+  visibility: hidden;
+  margin-bottom: -250px; }
+
+#emoticons .tabs {
+  width: 250px;
+  height: 250px;
+  overflow-y: auto;
+  display: inline; }
+
+.icon-insert_emoticon {
+  cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */
