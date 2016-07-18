@@ -98,7 +98,10 @@ input, .columnRight form {
   box-shadow: 4px 4px 5px -4px #C9C9C9; }
 
 .contactos {
-  overflow-y: scroll; }
+  overflow-y: auto; }
+
+.contactos div {
+  cursor: pointer; }
 
 .chatboxContact, .chatboxUser {
   max-width: 100%;
@@ -126,5 +129,23 @@ b {
 p {
   line-height: 1;
   margin: 0 0 5px; }
+
+#emoticons {
+  width: 250px;
+  height: 250px;
+  overflow-y: auto;
+  position: relative;
+  top: -280px;
+  background: #F0F0F0;
+  visibility: hidden; }
+
+#emoticons .tabs {
+  width: 250px;
+  height: 250px;
+  overflow-y: auto;
+  display: inline; }
+
+.icon-insert_emoticon {
+  cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */
