@@ -1,0 +1,213 @@
+$lightBlue: #84C5DF;
+$purple: #CB6CA0;
+$sea: #61B495;
+$lightBrown: #CAAF6B;
+$gray0: #c9c9c9;
+$gray1: #EEEEEE;
+$gray2: #DFDFDF;
+$gray3: #DADADA;
+$gray4: #CDCDCD;
+$gray5: #EDEDED;
+$drkCyan: #009788;
+$drkGray: #767576;
+$grayText: #AAAAAA;
+$lightGreen: #DEF7C7;
+
+
+body{
+	background:$gray2;
+	b{
+		font-weight:500;
+	}
+	p{
+		line-height:1;
+		margin:0 0 5px;
+	}
+	.bgGreen{
+		background:$drkCyan;
+		height:110px;
+	}
+
+	img{
+		width:40px;
+		height:40px;
+		border-radius:100%;
+		vertical-align:middle;
+		margin:5px;
+	}
+
+	.container {
+		padding:1% 7%;
+
+		.columnLeft {
+			width:41.5%;
+			box-shadow: 0px 4px 5px $gray0;
+			float:left;
+			border:1px solid $gray3;
+			height:108vh;
+			display:inline-block;
+			overflow:hidden;
+
+			.user {
+				background:$gray1;
+				padding: 10px;
+				span {
+					float:right;
+					color:$drkGray;
+					font-size:20px;
+					margin-top:10px;
+				}
+			}
+
+			.searchbox {
+				background:white;
+				padding:10px;
+				border-bottom:1px solid $gray4;
+				form{
+					color:$gray0;
+					display:inline-block;
+					border-radius:5px;
+					border:1px solid $gray5;
+					background:white;
+					padding:10px;
+					input {
+						margin-left:10px;
+						border:none;
+						width:400px;
+					}
+					span {
+						font-size:13px;
+						display:inline-block;
+					}
+				}
+			}
+
+			.contactos {
+				overflow-y:scroll;
+				>div {
+					background:white;
+					padding:10px;
+					border-bottom:1px solid $gray4;
+				}
+				.info{
+					width:85%;
+					vertical-align:middle;
+					display:inline-block;
+					img {
+						display:inline-block;
+					}
+					.hora{
+						float:right;
+					}
+					.detalle{
+						font-size:14px;
+						color:#827287;
+					}
+				}
+			}
+		}
+
+		.columnRight{
+
+			.contacto {
+				width: 100%;
+				padding: 10px;
+				background:$gray1;
+				img {
+					display: inline-block;
+				}
+				.info {
+					display: inline-block;
+					width: 90%;
+          span {
+            float:right;
+            color:$drkGray;
+            font-size:20px;
+            margin-top:10px;
+          }
+					.detalle{
+						font-size:14px;
+						color:#827287;
+					}
+
+				}
+			}
+
+			float:left;
+			border:1px solid $gray3;
+			height:108vh;
+			display:inline-block;
+			overflow:hidden;
+			background:#EDEAE5;
+			width:58.3%;
+			box-shadow: 4px 4px 5px -4px $gray0;
+
+			.chat {
+				padding:20px;
+				background:url(../image/chat-panel-bg.png);
+				background-size:cover;
+				.chatName1{
+					color:$lightBlue;
+				}
+				.chatName2{
+					color:$purple;
+				}
+				.chatName3{
+					color:$sea;
+				}
+				.chatName4{
+					color:$lightBrown;
+				}
+				.chatboxContact {
+					border-radius:5px;
+					border:1px solid $gray5;
+					margin-bottom:2px;
+					background:white;
+					padding:10px;
+					max-width:100%;
+					display:inline-block;
+				}
+				.chatboxUser {
+					border-radius:5px;
+					border:1px solid $gray5;
+					margin-bottom:2px;
+					background:white;
+					padding:10px;
+					background:$lightGreen;
+					text-align:right;
+					float:right;
+					max-width:100%;
+					display:inline-block;
+				}
+			}
+
+			.text {
+				padding:10px;
+				background:#F0F0F0;
+					span {
+						color:$grayText;
+						font-size:20px;
+						margin-top:10px;
+						font-size:13px;
+						display:inline-block;
+					}
+					form{
+						color:$gray0;
+						display:inline-block;
+						border-radius:5px;
+						border:1px solid $gray5;
+						margin-left:10px;
+						border:none;
+						width:85%;
+						background:white;
+						padding:10px;
+						input {
+							margin-left:10px;
+							border:none;
+							width:85%;
+						}
+					}
+				}
+		}
+	}
+}
