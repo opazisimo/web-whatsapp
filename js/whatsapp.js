@@ -2,13 +2,16 @@ $(document).ready(function() {
 	$('.icon-mic').click(function(e){
 		var inputChat = $('#inputChat');
 		var minIcon=$('.minIcon');
+		var fecha = new Date();
 		minIcon.click(function(){
 			input.Chat.append('minIcon');
 		});
 		if(inputChat.val.length > 0 ){
+			var minutos = fecha.getMinutes();
+			var hora = fecha.getHours();
 			var chat = $('.chat');
 			var chatingresado = $('#inputChat').val();
-			chat.append('<div class="row"><div class="col-lg-offset-6 col-lg-6"><span class="chatboxUser"><p class="detalle">'+ chatingresado +'</p></span></div></div>')
+			chat.append('<div class="row"><div class="col-lg-offset-6 col-lg-6"><span class="chatboxUser"><p class="detalle">'+ chatingresado + '<span> '+  hora  + ':'+ minutos +'</span>' +'</p></span></div></div>')
 			inputChat.val('');
 		}
 });
@@ -30,4 +33,4 @@ usuarios=['Laboratoria Perú', 'Raymi Saldomando','Mariana Costa','Ana María Ma
 		clicked=false;
 		}
 	});
-	});
+});
