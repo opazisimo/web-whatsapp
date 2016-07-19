@@ -147,7 +147,7 @@ body {
           margin-top: 10px;
           font-size: 30px;
           display: inline-block; }
-        body .container .columnRight .text form {
+        body .container .columnRight .text #inputChat {
           color: #c9c9c9;
           display: inline-block;
           border-radius: 5px;
@@ -157,10 +157,6 @@ body {
           width: 98%;
           background: white;
           padding: 10px; }
-          body .container .columnRight .text form #inputChat {
-            margin-left: 10px;
-            border: none;
-            width: 85%; }
 
 #emoticons {
   width: 250px;
@@ -183,7 +179,7 @@ body {
 .icon-insert_emoticon {
   cursor: pointer; }
 
-.minIcon img {
+.minIcon {
   width: 20px;
   height: 20px; }
 

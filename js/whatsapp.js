@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(){
 	var usuarios=[]
 	var clicked;//Variable que reconoce si es el primer o segundo click que se hace.
 	var addIcon;//Variable que chequea si se agregó emoticon.
@@ -22,16 +22,14 @@ $(document).ready(function() {
 			inputChat.css('color','black');
 			writing=true;
 		}
-		
 	});
-	$('.icon-mic').click(function(e){
+	$('.icon-mic').click(function(){
 		if(addicon=true){//Si se agregó emoticon se imprime todo el contenido del mensaje.
 			chatingresado=inputChat.html();
 		}
 		else{
 			chatingresado=inputChat.text();//Si no se agregó se imprime sólo texto.
 		}
-		
 		if(inputChat.length > 0 ){
 			var fecha = new Date();
 			var minutos = fecha.getMinutes();
@@ -43,7 +41,6 @@ $(document).ready(function() {
 			$('.hora-chat').css('display', 'block');
 			addIcon=false;
 			writing=false;
-
 		}
 	});
 	$('.contactos>div').click(function(){
@@ -88,5 +85,18 @@ $(document).ready(function() {
 			}
 		}
 	});
+	$('input').keyup(function() {
+			    filter(this); 
+	});
+	function filter(element) {
+  var value = $(element).val();
+  $(".contactos > div").each(function () {
+      if ($(this).text().toLowerCase().indexOf(value) > -1) {
+
+          $(this).show();
+      } else {
+          $(this).hide();
+      }
+		});
+	}
 });
-	

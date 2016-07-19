@@ -203,7 +203,7 @@ body{
 						font-size:30px;
 						display:inline-block;
 					}
-					form{
+					#inputChat{
 						color:$gray0;
 						display:inline-block;
 						border-radius:5px;
@@ -213,11 +213,6 @@ body{
 						width:98%;
 						background:white;
 						padding:10px;
-						#inputChat{
-							margin-left:10px;
-							border:none;
-							width:85%;
-						}
 					}
 				}
 		}
@@ -248,7 +243,7 @@ body{
 .icon-insert_emoticon{
 cursor:pointer;
 }
-.minIcon img{
+.minIcon{
 	width:20px;
 	height:20px;
 }

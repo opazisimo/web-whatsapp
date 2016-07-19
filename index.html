@@ -24,7 +24,7 @@
 					<div class="searchbox">
 						<form action="search">
 							<span class="icon-search"></span>
-							<input type="text" placeholder="Buscar o empezar un nuevo chat">
+							<input id="input-1"type="text" placeholder="Buscar o empezar un nuevo chat">
 						</form>
 					</div>
 					<div class="contactos">
@@ -244,9 +244,9 @@
 								</div>
 							</div>
 							<div class="col-xs-10">
-								<form>
-									<input id="inputChat" type="text" placeholder="Escribe tu mensaje aquí">
-								</form>
+								<div id="inputChat" contenteditable="true" type="text">
+									Escribe un mensaje...
+								</div>
 							</div>
 							<div class="col-xs-1">
 								<span class="icon-mic"></span>
