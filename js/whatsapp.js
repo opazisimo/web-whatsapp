@@ -60,20 +60,33 @@ $(document).ready(function() {
 		clicked=false;
 		}
 	});
+	var conversaciones=[];
+	var raymiSaldomando=[];
+	var marianaCosta=[];
+	var anaMariaMartinezFranklin=[];
+	var rodulfoPrieto=[];
+	var andreaLamas=[];
+	var mariaPaulaRivarola=[];
+	var katySanchez=[];
+	var aldoAlfaro=[];
+	conversaciones=[raymiSaldomando,marianaCosta,anaMariaMartinezFranklin,rodulfoPrieto,andreaLamas,mariaPaulaRivarola,katySanchez,aldoAlfaro];
+	raymiSaldomando=['Raymi Saldomando','Juan Diego, hay un problema!','Estás?'];
+	marianaCosta=['Mariana Costa','Hola, habla tu dueña.','La gran Mariana Costa','Madre de un baby'];
+	anaMariaMartinezFranklin=['Ana María Martinez Franklin','Heyheyheeey, tengo un notición'];
+	rodulfoPrieto=['Rodulfo Prieto','Me gusta Electric Wizard','lo has escuchado?'];
+	andreaLamas=['Andrea Lamas','estoy tan resfriada ):'];
+	mariaPaulaRivarola=['Maria Paula Rila','Ya lo subí','lo revisaste?'];
+	katySanchez=['Katy Sanchez','confirma la invitación que te mandé'];
+	aldoAlfaro=['Aldo Alfaro','Metal. Metal for life'];
+	$('.contactos>div').click(function(){
+		var usuario=$(this).attr('id');
+		usuario=eval(usuario);
+		$('.chat').append('<div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName1 detalle">'+usuario[0]+'</p><p class="detalle">'+usuario[1]+'</p></span></div></div>');
+		if (usuario.length>1){
+			for (var i = 2; i < usuario.length; i++) {
+				$('.chat').append('<div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="detalle">'+usuario[i]+'</p></span></div></div>');
+			}
+		}
+	});
 });
-var raymiSaldomando=[];
-var marianaCosta=[];
-var anaMariaMartinezFranklin=[];
-var rodulfoPrieto=[];
-var andreaLamas=[];
-var mariaPaulaRivarola=[];
-var katySanchez=[];
-var aldoAlfaro=[];
-raymiSaldomando=['Raymi Saldomando','Juan Diego, hay un problema!','Estás?'];
-marianaCosta=['Mariana Costa','Hola, habla tu dueña.','La gran Mariana Costa','Madre de un baby'];
-anaMariaMartinezFranklin=['Ana María Martinez Franklin','Heyheyheeey, tengo un notición'];
-rodulfoPrieto=['Rodulfo Prieto','Me gusta Electric Wizard','lo has escuchado?'];
-andreaLamas=['Andrea Lamas','estoy tan resfriada ):'];
-mariaPaulaRila=['Maria Paula Rila','Ya lo subí','lo revisaste?'];
-katySanchez=['Katy Sanchez','confirma la invitación que te mandé'];
-aldoAlfaro=['Aldo Alfaro','Metal. Metal for life'];
+	
