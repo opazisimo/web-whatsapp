@@ -60,7 +60,21 @@ $(document).ready(function() {
 		clicked=false;
 		}
 	});
-	
 
-	
+	$('#input-1').keyup(function() {
+    	filtrarLista(this); 
+	});
+	function filtrarLista(lista) {
+    var value = $(lista).val();
+    $(".info > p > b ").each(function () {
+        if ($(this).text().indexOf(value) > -1) {
+            $(this).show();
+        } else {
+            $('.contactos > div').hide();
+        }
+    	});
+	};
+
+
+
 });
