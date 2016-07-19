@@ -211,22 +211,31 @@ body{
 	}
 }
 
-			#emoticons{
-			  width:250px;
-			  height:250px;
-			  overflow-y:auto;
-			  position:relative;
-			  top:-280px;
-			  background:#F0F0F0;
-			  visibility:hidden;
-			  margin-bottom: -250px;
-			}
-			#emoticons .tabs{
-			  width:250px;
-			  height:250px;
-			  overflow-y:auto;
-			  display:inline;
-			}
-			.icon-insert_emoticon{
-			  cursor:pointer;
-			}
+#emoticons{
+	width:250px;
+	height:250px;
+	overflow-y:auto;
+	position:relative;
+	top:-280px;
+	background:#F0F0F0;
+	visibility:hidden;
+	margin-bottom: -250px;
+	img{
+	width:25px;
+	height:25px;
+	}
+
+	.tabs{
+	width:250px;
+	height:250px;
+	overflow-y:auto;
+	display:inline;
+	}
+}
+.icon-insert_emoticon{
+cursor:pointer;
+}
+.minIcon img{
+	width:20px;
+	height:20px;
+}
