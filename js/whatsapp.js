@@ -60,4 +60,20 @@ $(document).ready(function() {
 		clicked=false;
 		}
 	});
-	});
+});
+var raymiSaldomando=[];
+var marianaCosta=[];
+var anaMariaMartinezFranklin=[];
+var rodulfoPrieto=[];
+var andreaLamas=[];
+var mariaPaulaRivarola=[];
+var katySanchez=[];
+var aldoAlfaro=[];
+raymiSaldomando=['Raymi Saldomando','Juan Diego, hay un problema!','Estás?'];
+marianaCosta=['Mariana Costa','Hola, habla tu dueña.','La gran Mariana Costa','Madre de un baby'];
+anaMariaMartinezFranklin=['Ana María Martinez Franklin','Heyheyheeey, tengo un notición'];
+rodulfoPrieto=['Rodulfo Prieto','Me gusta Electric Wizard','lo has escuchado?'];
+andreaLamas=['Andrea Lamas','estoy tan resfriada ):'];
+mariaPaulaRila=['Maria Paula Rila','Ya lo subí','lo revisaste?'];
+katySanchez=['Katy Sanchez','confirma la invitación que te mandé'];
+aldoAlfaro=['Aldo Alfaro','Metal. Metal for life'];
