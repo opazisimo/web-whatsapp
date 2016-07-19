@@ -1,19 +1,21 @@
 $(document).ready(function() {
 	var usuarios=[]
 	var clicked;//Variable que reconoce si es el primer o segundo click que se hace.
-	var addIcon;
-	var writing;
+	var addIcon;//Variable que chequea si se agregó emoticon.
+	var writing;//Variable que chequea si se está escribiendo.
 	usuarios=['Laboratoria Perú', 'Raymi Saldomando','Mariana Costa','Ana María Martínez','Rodulfo Prieto','Andrea Lamas','Maria Paula Rivarola','Katy Sanchez','Aldo Alfaro'];
 	clicked=false;
 	addIcon=false;
 	writing=false;
 	var inputChat = $('#inputChat');
 	var minIcon=$('.minIcon');
+	//Al hacer click en el emoticon se agregará al message.
 	minIcon.click(function(){
 		minIcon=$(this);
 		minIcon.clone().appendTo(inputChat);
 		addIcon=true;
 	});
+	//Al empezar a escribir el mensaje el div 'input' cambia de color y se vacía.
 	inputChat.click(function(){
 		while (writing==false){
 			inputChat.html('');
@@ -23,11 +25,11 @@ $(document).ready(function() {
 		
 	});
 	$('.icon-mic').click(function(e){
-		if(addicon=true){
+		if(addicon=true){//Si se agregó emoticon se imprime todo el contenido del mensaje.
 			chatingresado=inputChat.html();
 		}
 		else{
-			chatingresado=inputChat.text();
+			chatingresado=inputChat.text();//Si no se agregó se imprime sólo texto.
 		}
 		
 		if(inputChat.length > 0 ){
@@ -47,6 +49,7 @@ $(document).ready(function() {
 	$('.contactos>div').click(function(){
 		$('.chat').empty();
 	});
+	//Esconde o muestra los emoticonos.
 	$('.icon-insert_emoticon').click(function(){
 		if (clicked==false){
 		$('#emoticons').css('visibility','visible');
