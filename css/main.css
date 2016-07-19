@@ -157,14 +157,20 @@ body {
   background: #F0F0F0;
   visibility: hidden;
   margin-bottom: -250px; }
-
-#emoticons .tabs {
-  width: 250px;
-  height: 250px;
-  overflow-y: auto;
-  display: inline; }
+  #emoticons img {
+    width: 25px;
+    height: 25px; }
+  #emoticons .tabs {
+    width: 250px;
+    height: 250px;
+    overflow-y: auto;
+    display: inline; }
 
 .icon-insert_emoticon {
   cursor: pointer; }
+
+.minIcon img {
+  width: 20px;
+  height: 20px; }
 
 /*# sourceMappingURL=main.css.map */
