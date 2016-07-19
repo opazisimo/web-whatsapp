@@ -31,10 +31,14 @@ $(document).ready(function() {
 		}
 		
 		if(inputChat.length > 0 ){
+			var fecha = new Date();
+			var minutos = fecha.getMinutes();
+			var hora = fecha.getHours();
 			var chat = $('.chat');
-			chat.append('<div class="row"><div class="col-lg-offset-6 col-lg-6"><span class="chatboxUser"><p class="detalle">'+ chatingresado +'</p></span></div></div>')
+			chat.append('<div class="row"><div class="col-lg-offset-6 col-lg-6"><span class="chatboxUser"><p class="detalle">'+ chatingresado + '<span class="hora-chat"> '+  hora  + ':'+ minutos +'</span>' +'</p></span></div></div>')
 			inputChat.css('color','#AAAAAA');
 			inputChat.html('Escribe un mensaje...');
+			$('.hora-chat').css('display', 'block');
 			addIcon=false;
 			writing=false;
 
