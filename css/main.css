@@ -1,5 +1,6 @@
 body {
-  background: #DFDFDF; }
+  background: #DFDFDF;
+  height: 100vh; }
   body b {
     font-weight: 500; }
   body p {
@@ -21,10 +22,10 @@ body {
       box-shadow: 0px 4px 5px #c9c9c9;
       float: left;
       border: 1px solid #DADADA;
-      height: 108vh;
-      display: inline-block;
-      overflow: hidden; }
+      height: 95vh !important;
+      display: inline-block; }
       body .container .columnLeft .user {
+        height: 10vh !important;
         background: #EEEEEE;
         padding: 10px; }
         body .container .columnLeft .user span {
@@ -33,6 +34,7 @@ body {
           font-size: 20px;
           margin-top: 10px; }
       body .container .columnLeft .searchbox {
+        height: 10vh !important;
         background: white;
         padding: 10px;
         border-bottom: 1px solid #CDCDCD; }
@@ -51,7 +53,8 @@ body {
             font-size: 13px;
             display: inline-block; }
       body .container .columnLeft .contactos {
-        overflow-y: scroll; }
+        height: 75vh !important;
+        overflow-y: auto; }
         body .container .columnLeft .contactos > div {
           background: white;
           padding: 10px;
@@ -68,15 +71,16 @@ body {
             font-size: 14px;
             color: #827287; }
     body .container .columnRight {
+      height: 95vh !important;
       float: left;
       border: 1px solid #DADADA;
       height: auto;
       display: inline-block;
-      overflow: hidden;
       background: #EDEAE5;
       width: 58.3%;
       box-shadow: 4px 4px 5px -4px #c9c9c9; }
       body .container .columnRight .contacto {
+        height: 10vh !important;
         width: 100%;
         padding: 10px;
         background: #EEEEEE; }
@@ -92,8 +96,11 @@ body {
             margin-top: 10px; }
           body .container .columnRight .contacto .info .detalle {
             font-size: 14px;
-            color: #827287; }
+            color: #AAAAAA !important; }
       body .container .columnRight .chat {
+        width: 100%;
+        overflow: scroll;
+        height: 75vh !important;
         padding: 20px;
         background: url(../image/chat-panel-bg.png);
         background-size: cover; }
@@ -113,6 +120,9 @@ body {
           padding: 10px;
           max-width: 100%;
           display: inline-block; }
+          body .container .columnRight .chat .chatboxContact .detalle {
+            font-size: 14px;
+            color: #767576 !important; }
         body .container .columnRight .chat .chatboxUser {
           border-radius: 5px;
           border: 1px solid #EDEDED;
@@ -124,14 +134,18 @@ body {
           float: right;
           max-width: 100%;
           display: inline-block; }
+          body .container .columnRight .chat .chatboxUser .detalle {
+            font-size: 14px;
+            color: #767576 !important; }
       body .container .columnRight .text {
+        height: 10vh !important;
         padding: 10px;
         background: #F0F0F0; }
         body .container .columnRight .text span {
           color: #AAAAAA;
           font-size: 20px;
           margin-top: 10px;
-          font-size: 13px;
+          font-size: 30px;
           display: inline-block; }
         body .container .columnRight .text form {
           color: #c9c9c9;
@@ -140,7 +154,7 @@ body {
           border: 1px solid #EDEDED;
           margin-left: 10px;
           border: none;
-          width: 85%;
+          width: 98%;
           background: white;
           padding: 10px; }
           body .container .columnRight .text form #inputChat {
