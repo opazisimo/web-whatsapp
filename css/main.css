@@ -99,7 +99,7 @@ body {
             color: #AAAAAA !important; }
       body .container .columnRight .chat {
         width: 100%;
-        overflow: scroll;
+        overflow: auto;
         height: 75vh !important;
         padding: 20px;
         background: url(../image/chat-panel-bg.png);

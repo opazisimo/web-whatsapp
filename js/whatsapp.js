@@ -1,19 +1,46 @@
 $(document).ready(function(){
-	var usuarios=[]
 	var clicked;//Variable que reconoce si es el primer o segundo click que se hace.
 	var addIcon;//Variable que chequea si se agregó emoticon.
 	var writing;//Variable que chequea si se está escribiendo.
-	usuarios=['Laboratoria Perú', 'Raymi Saldomando','Mariana Costa','Ana María Martínez','Rodulfo Prieto','Andrea Lamas','Maria Paula Rivarola','Katy Sanchez','Aldo Alfaro'];
+	var inputChat;//El contenido que escribe el usuario
+	var minIcon;//Variable asociada a los íconos.
+	var contactos=[];//Variable que guarda los 'id' de los contactos con que se ha iniciado chat
+	var raymiSaldomando=[];
+	var marianaCosta=[];
+	var anaMariaMartinezFranklin=[];
+	var rodulfoPrieto=[];
+	var andreaLamas=[];
+	var mariaPaulaRivarola=[];
+	var katySanchez=[];
+	var aldoAlfaro=[];
+	var laboratoriaPeru=[];
+	//Arreglo de contactos
+	contactos=[raymiSaldomando,marianaCosta,anaMariaMartinezFranklin,rodulfoPrieto,andreaLamas,mariaPaulaRivarola,katySanchez,aldoAlfaro];
+	//Dentro de cada usuario se guardan sus mensajes, agregándolos al final del array
+	raymiSaldomando=['Raymi Saldomando','Juan Diego, hay un problema!','Estás?'];
+	marianaCosta=['Mariana Costa','Hola, habla tu dueña.','La gran Mariana Costa','Madre de un baby'];
+	anaMariaMartinezFranklin=['Ana María Martinez Franklin','Heyheyheeey, tengo un notición'];
+	rodulfoPrieto=['Rodulfo Prieto','Me gusta Electric Wizard','lo has escuchado?'];
+	andreaLamas=['Andrea Lamas','estoy tan resfriada ):'];
+	mariaPaulaRivarola=['Maria Paula Rila','Ya lo subí','lo revisaste?'];
+	katySanchez=['Katy Sanchez','confirma la invitación que te mandé'];
+	aldoAlfaro=['Aldo Alfaro','Metal. Metal for life'];
+	laboratoriaPeru=['<div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName1">Andrea Lamas</p><p class="detalle">Chicos, han visto el nuevo corte de Aldo?</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName2">Mariana Costa</p><p class="detalle">¿Finalmente se lo cortó?</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName3">María Paula Rivarola</p><p class="detalle">Jajajja Siii finalmente se cortó!!!</p></span></div></div><div class="row"><div class="col-lg-offset-6 col-lg-6"><span class="chatboxUser"><p class="detalle">antes parecía Mufasa, jajaja</p></span></div></div><div class="row"><div class="col-lg-offset-6 col-lg-6"><span class="chatboxUser"><p class="detalle">ahora sí está decente</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName1">Andrea Lamas</p><p class="detalle">¿Por qué se lo habrá cortado?</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName4">Aldo Alfaro</p><p class="detalle">Ya ya ya, hacía mucho calor, qué más.</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName1">Andrea Lamas</p><p class="detalle">Está siguiendo los pasos de Juan Diego!</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName3">Maria Paula Rivarola</p><p class="detalle">Nunca!!! Juan Diego es único</p></span></div></div>']
 	clicked=false;
 	addIcon=false;
 	writing=false;
-	var inputChat = $('#inputChat');
-	var minIcon=$('.minIcon');
+	inputChat = $('#inputChat');
+	minIcon=$('.minIcon');
 	//Al hacer click en el emoticon se agregará al message.
 	minIcon.click(function(){
 		minIcon=$(this);
+		if (writing==false){
+			inputChat.html('');
+		}
 		minIcon.clone().appendTo(inputChat);
+		$('.icon-mic').attr('class','glyphicon glyphicon-send');
 		addIcon=true;
+		writing=true;
 	});
 	//Al empezar a escribir el mensaje el div 'input' cambia de color y se vacía.
 	inputChat.click(function(){
@@ -21,28 +48,20 @@ $(document).ready(function(){
 			inputChat.html('');
 			inputChat.css('color','black');
 			writing=true;
+			$('.icon-mic').attr('class','glyphicon glyphicon-send');
 		}
+		writing=true;
 	});
-	$('.icon-mic').click(function(){
-		if(addicon=true){//Si se agregó emoticon se imprime todo el contenido del mensaje.
-			chatingresado=inputChat.html();
-		}
-		else{
-			chatingresado=inputChat.text();//Si no se agregó se imprime sólo texto.
-		}
-		if(inputChat.length > 0 ){
-			var fecha = new Date();
-			var minutos = fecha.getMinutes();
-			var hora = fecha.getHours();
-			var chat = $('.chat');
-			chat.append('<div class="row"><div class="col-lg-offset-6 col-lg-6"><span class="chatboxUser"><p class="detalle">'+ chatingresado + '<span class="hora-chat"> '+  hora  + ':'+ minutos +'</span>' +'</p></span></div></div>')
-			inputChat.css('color','#AAAAAA');
-			inputChat.html('Escribe un mensaje...');
-			$('.hora-chat').css('display', 'block');
+	//Al hacer click en 'Enviar'
+	$('#action').click(function(){
+		if($('#action').attr('class')=='glyphicon glyphicon-send'){
+			appendToChat();
 			addIcon=false;
 			writing=false;
 		}
+		$('#action').attr('class','icon-mic');
 	});
+	//Vacía el contenedor de la conversación.
 	$('.contactos>div').click(function(){
 		$('.chat').empty();
 	});
@@ -57,24 +76,7 @@ $(document).ready(function(){
 		clicked=false;
 		}
 	});
-	var conversaciones=[];
-	var raymiSaldomando=[];
-	var marianaCosta=[];
-	var anaMariaMartinezFranklin=[];
-	var rodulfoPrieto=[];
-	var andreaLamas=[];
-	var mariaPaulaRivarola=[];
-	var katySanchez=[];
-	var aldoAlfaro=[];
-	conversaciones=[raymiSaldomando,marianaCosta,anaMariaMartinezFranklin,rodulfoPrieto,andreaLamas,mariaPaulaRivarola,katySanchez,aldoAlfaro];
-	raymiSaldomando=['Raymi Saldomando','Juan Diego, hay un problema!','Estás?'];
-	marianaCosta=['Mariana Costa','Hola, habla tu dueña.','La gran Mariana Costa','Madre de un baby'];
-	anaMariaMartinezFranklin=['Ana María Martinez Franklin','Heyheyheeey, tengo un notición'];
-	rodulfoPrieto=['Rodulfo Prieto','Me gusta Electric Wizard','lo has escuchado?'];
-	andreaLamas=['Andrea Lamas','estoy tan resfriada ):'];
-	mariaPaulaRivarola=['Maria Paula Rila','Ya lo subí','lo revisaste?'];
-	katySanchez=['Katy Sanchez','confirma la invitación que te mandé'];
-	aldoAlfaro=['Aldo Alfaro','Metal. Metal for life'];
+	//Agrega los mensajes asociados al contacto seleccionado al contenedor de la conversación.
 	$('.contactos>div').click(function(){
 		var usuario=$(this).attr('id');
 		usuario=eval(usuario);
@@ -85,18 +87,56 @@ $(document).ready(function(){
 			}
 		}
 	});
-	$('input').keyup(function() {
-			    filter(this); 
-	});
-	function filter(element) {
-  var value = $(element).val();
-  $(".contactos > div").each(function () {
-      if ($(this).text().toLowerCase().indexOf(value) > -1) {
 
-          $(this).show();
-      } else {
-          $(this).hide();
-      }
+	$('#inputChat').on('keydown', function(e) {
+	    if (e.which == 13) {
+	        e.preventDefault();
+	        appendToChat();
+			addIcon=false;
+			writing=false;
+    	}
+	});
+	//Agrega lo que fue escrito en el div 'input' al chat
+	function appendToChat(){
+		if(addIcon==true){//Si se agregó emoticon se imprime todo el contenido del mensaje.
+			chatingresado=inputChat.html();
+		}
+		else{
+			chatingresado=inputChat.text();//Si no se agregó se imprime sólo texto.
+			if(chatingresado==''){
+				return
+			}
+		}
+        var fecha = new Date();
+		var minutos = fecha.getMinutes();
+		minutos=agregarCero(minutos);
+		var hora = fecha.getHours();
+		var chat = $('.chat');
+		chat.append('<div class="row"><div class="col-lg-offset-6 col-lg-6"><span class="chatboxUser"><p class="detalle">'+ chatingresado + '<span class="hora-chat"> '+  hora  + ':'+ minutos +'</span>' +'</p></span></div></div>')
+		inputChat.css('color','#AAAAAA');
+		inputChat.html('Escribe un mensaje...');
+		$('.hora-chat').css('display', 'block');
+	}
+	//Al escribir en el campo 'input' se llama al filtro.
+	$('input').keyup(function() {
+		filter(this); 
+	});
+	//Filtra en base a lo escrito
+	function filter(element) {
+		var value = $(element).val();
+		$(".contactos > div").each(function () {
+		    if ($(this).text().toLowerCase().indexOf(value) > -1) {
+		        $(this).show();
+		    } else {
+		        $(this).hide();
+		    }
 		});
+	}
+	//Se llama al imprimir la hora
+	function agregarCero(i) {
+	    if (i < 10) {
+	    i = "0" + i;//Agrega un cero a números menores que 10
+	    }
+	    return i;
 	}
 });
