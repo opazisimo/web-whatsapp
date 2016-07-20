@@ -137,6 +137,8 @@ body {
           body .container .columnRight .chat .chatboxUser .detalle {
             font-size: 14px;
             color: #767576 !important; }
+        body .container .columnRight .chat .hora-chat {
+          font-size: 10px; }
       body .container .columnRight .text {
         height: 10vh !important;
         padding: 10px;
@@ -157,30 +159,30 @@ body {
           width: 98%;
           background: white;
           padding: 10px; }
-
-#emoticons {
-  width: 250px;
-  height: 250px;
-  overflow-y: auto;
-  position: relative;
-  top: -280px;
-  background: #F0F0F0;
-  visibility: hidden;
-  margin-bottom: -250px; }
-  #emoticons img {
-    width: 25px;
-    height: 25px; }
-  #emoticons .tabs {
-    width: 250px;
-    height: 250px;
-    overflow-y: auto;
-    display: inline; }
-
-.icon-insert_emoticon {
-  cursor: pointer; }
-
-.minIcon {
-  width: 20px;
-  height: 20px; }
+        body .container .columnRight .text #emoticons {
+          width: 250px;
+          height: 250px;
+          overflow-y: auto;
+          position: relative;
+          top: -280px;
+          background: #F0F0F0;
+          visibility: hidden;
+          margin-bottom: -250px; }
+          body .container .columnRight .text #emoticons img {
+            width: 25px;
+            height: 25px; }
+          body .container .columnRight .text #emoticons .tabs {
+            width: 250px;
+            height: 250px;
+            overflow-y: auto;
+            display: inline; }
+        body .container .columnRight .text .icon-insert_emoticon {
+          cursor: pointer; }
+        body .container .columnRight .text .minIcon {
+          width: 20px;
+          height: 20px; }
+        body .container .columnRight .text #action {
+          position: relative;
+          right: 25px; }
 
 /*# sourceMappingURL=main.css.map */
