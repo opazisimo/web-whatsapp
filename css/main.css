@@ -58,7 +58,10 @@ body {
         body .container .columnLeft .contactos > div {
           background: white;
           padding: 10px;
-          border-bottom: 1px solid #CDCDCD; }
+          border-bottom: 1px solid #CDCDCD;
+          transition: all 0.3s ease-in; }
+          body .container .columnLeft .contactos > div:hover {
+            background: #d5ebf4; }
         body .container .columnLeft .contactos .info {
           width: 85%;
           vertical-align: middle;

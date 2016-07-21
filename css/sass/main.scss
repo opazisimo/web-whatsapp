@@ -90,6 +90,10 @@ body{
 					background:white;
 					padding:10px;
 					border-bottom:1px solid $gray4;
+					transition:all 0.3s ease-in;
+					&:hover{
+						background:lighten($lightBlue,20%);
+					}
 				}
 				.info{
 					width:85%;

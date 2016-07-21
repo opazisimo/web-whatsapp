@@ -17,15 +17,15 @@ $(document).ready(function(){
 	//Arreglo de contactos
 	contactos=[raymiSaldomando,marianaCosta,anaMariaMartinezFranklin,rodulfoPrieto,andreaLamas,mariaPaulaRivarola,katySanchez,aldoAlfaro];
 	//Dentro de cada usuario se guardan sus mensajes, agregándolos al final del array
-	raymiSaldomando=['Raymi Saldomando','Juan Diego, hay un problema!','Estás?'];
-	marianaCosta=['Mariana Costa','Hola, habla tu dueña.','La gran Mariana Costa','Madre de un baby'];
-	anaMariaMartinezFranklin=['Ana María Martinez Franklin','Heyheyheeey, tengo un notición'];
-	rodulfoPrieto=['Rodulfo Prieto','Me gusta Electric Wizard','lo has escuchado?'];
-	andreaLamas=['Andrea Lamas','estoy tan resfriada ):'];
-	mariaPaulaRivarola=['Maria Paula Rila','Ya lo subí','lo revisaste?'];
-	katySanchez=['Katy Sanchez','confirma la invitación que te mandé'];
-	aldoAlfaro=['Aldo Alfaro','Metal. Metal for life'];
-	laboratoriaPeru=['<div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName1">Andrea Lamas</p><p class="detalle">Chicos, han visto el nuevo corte de Aldo?</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName2">Mariana Costa</p><p class="detalle">¿Finalmente se lo cortó?</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName3">María Paula Rivarola</p><p class="detalle">Jajajja Siii finalmente se cortó!!!</p></span></div></div><div class="row"><div class="col-lg-offset-6 col-lg-6"><span class="chatboxUser"><p class="detalle">antes parecía Mufasa, jajaja</p></span></div></div><div class="row"><div class="col-lg-offset-6 col-lg-6"><span class="chatboxUser"><p class="detalle">ahora sí está decente</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName1">Andrea Lamas</p><p class="detalle">¿Por qué se lo habrá cortado?</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName4">Aldo Alfaro</p><p class="detalle">Ya ya ya, hacía mucho calor, qué más.</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName1">Andrea Lamas</p><p class="detalle">Está siguiendo los pasos de Juan Diego!</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName3">Maria Paula Rivarola</p><p class="detalle">Nunca!!! Juan Diego es único</p></span></div></div>']
+	raymiSaldomando=['Raymi Saldomando','image/raymi.jpg','Juan Diego, hay un problema!','Estás?'];
+	marianaCosta=['Mariana Costa','image/mariana.jpg','Hola, habla tu dueña.','La gran Mariana Costa','Madre de un baby'];
+	anaMariaMartinezFranklin=['Ana María Martinez Franklin','image/anamaria.jpg','Heyheyheeey, tengo un notición'];
+	rodulfoPrieto=['Rodulfo Prieto','image/rodulfo.jpg','Me gusta Electric Wizard','lo has escuchado?'];
+	andreaLamas=['Andrea Lamas','image/andrea.jpg','estoy tan resfriada ):'];
+	mariaPaulaRivarola=['Maria Paula Rila','image/mariapaula.jpg','Ya lo subí','lo revisaste?'];
+	katySanchez=['Katy Sanchez','image/katy.jpg','confirma la invitación que te mandé'];
+	aldoAlfaro=['Aldo Alfaro','image/aldo.jpg','Metal. Metal for life'];
+	laboratoriaPeru=['Laboratoria Perú','image/logocodeacademy.png','<div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName1">Andrea Lamas</p><p class="detalle">Chicos, han visto el nuevo corte de Aldo?</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName2">Mariana Costa</p><p class="detalle">¿Finalmente se lo cortó?</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName3">María Paula Rivarola</p><p class="detalle">Jajajja Siii finalmente se cortó!!!</p></span></div></div><div class="row"><div class="col-lg-offset-6 col-lg-6"><span class="chatboxUser"><p class="detalle">antes parecía Mufasa, jajaja</p></span></div></div><div class="row"><div class="col-lg-offset-6 col-lg-6"><span class="chatboxUser"><p class="detalle">ahora sí está decente</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName1">Andrea Lamas</p><p class="detalle">¿Por qué se lo habrá cortado?</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName4">Aldo Alfaro</p><p class="detalle">Ya ya ya, hacía mucho calor, qué más.</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName1">Andrea Lamas</p><p class="detalle">Está siguiendo los pasos de Juan Diego!</p></span></div></div><div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName3">Maria Paula Rivarola</p><p class="detalle">Nunca!!! Juan Diego es único</p></span></div></div>']
 	clicked=false;
 	addIcon=false;
 	writing=false;
@@ -80,12 +80,16 @@ $(document).ready(function(){
 	$('.contactos>div').click(function(){
 		var usuario=$(this).attr('id');
 		usuario=eval(usuario);
-		$('.chat').append('<div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName1">'+usuario[0]+'</p><p class="detalle">'+usuario[1]+'</p></span></div></div>');
+		$('.chat').append('<div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="chatName1">'+usuario[0]+'</p><p class="detalle">'+usuario[2]+'</p></span></div></div>');
 		if (usuario.length>1){
-			for (var i = 2; i < usuario.length; i++) {
+			for (var i = 3; i < usuario.length; i++) {
 				$('.chat').append('<div class="row"><div class="col-lg-6"><span class="chatboxContact"><p class="detalle">'+usuario[i]+'</p></span></div></div>');
 			}
 		}
+		$('.contacto b').empty();
+		$('.contacto b').append(usuario[0]);
+		$('.contacto img').attr('src',usuario[1]);
+
 	});
 
 	$('#inputChat').on('keydown', function(e) {
