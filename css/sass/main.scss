@@ -194,6 +194,9 @@ body{
 						color:$drkGray !important;
 					}
 				}
+				.hora-chat {
+					font-size: 10px;
+				}
 			}
 
 			.text {
@@ -218,36 +221,39 @@ body{
 						background:white;
 						padding:10px;
 					}
+				#emoticons{
+					width:250px;
+					height:250px;
+					overflow-y:auto;
+					position:relative;
+					top:-280px;
+					background:#F0F0F0;
+					visibility:hidden;
+					margin-bottom: -250px;
+					img{
+					width:25px;
+					height:25px;
+					}
+
+					.tabs{
+					width:250px;
+					height:250px;
+					overflow-y:auto;
+					display:inline;
+					}
+				}
+				.icon-insert_emoticon{
+				cursor:pointer;
+				}
+				.minIcon{
+					width:20px;
+					height:20px;
+				}
+				#action {
+					position: relative;
+					right: 25px;
+				}
 				}
 		}
 	}
-}
-
-#emoticons{
-	width:250px;
-	height:250px;
-	overflow-y:auto;
-	position:relative;
-	top:-280px;
-	background:#F0F0F0;
-	visibility:hidden;
-	margin-bottom: -250px;
-	img{
-	width:25px;
-	height:25px;
-	}
-
-	.tabs{
-	width:250px;
-	height:250px;
-	overflow-y:auto;
-	display:inline;
-	}
-}
-.icon-insert_emoticon{
-cursor:pointer;
-}
-.minIcon{
-	width:20px;
-	height:20px;
 }
